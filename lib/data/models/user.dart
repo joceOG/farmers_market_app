@@ -1,0 +1,26 @@
+class User {
+  final int id;
+  final String username;
+  final String email;
+  final String role;
+  final int? supervisorId;
+
+  User({
+    required this.id,
+    required this.username,
+    required this.email,
+    required this.role,
+    this.supervisorId,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'],
+      username: json['username'],
+      email: json['email'],
+      role: json['role'],
+      supervisorId: json['supervisor_id'],
+    );
+  }
+}
+
